@@ -20,12 +20,12 @@ dynamicFvMesh   dynamicRefineFvMesh;
 dynamicRefineFvMeshCoeffs
 {
     // How often to refine
-    refineInterval  5;
+    refineInterval  1;
     // Field to be refinement on
     field          alpha.water ;
     // Refine field inbetween lower..upper
     lowerRefineLevel 0.001;
-    upperRefineLevel 0.99;
+    upperRefineLevel 0.999;
     // If value < unrefineLevel unrefine
     unrefineLevel   10;
     // Have slower than 2:1 refinement
@@ -39,14 +39,10 @@ dynamicRefineFvMeshCoeffs
     // on surfaceScalarFields that do not need to be reinterpolated.
     correctFluxes
     (
-        (phi U)
-        (phiAbs U)
-        (phiAbs_0 U_0)
-        (nHatf none)
+        (phi none)
         (rhoPhi none)
-        (ghf none)
+        (nHatf  none)
         (alphaPhi none)
-        (flux(alpha) none)
     );
     // Write the refinement level as a volScalarField
     dumpLevel       true;
