@@ -1,0 +1,45 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.1.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      funkySetFieldsDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+expressions
+(
+
+	alpha.water     // 设置alpha1，名字任意
+	{
+	field alpha.water;   //操作的场
+        expression  "1";  //表达i式
+        condition "mag(pos()- vector(0,0,0)) < 0.001 ";
+	keepPatches true;  //是否保持以前边界
+
+	}
+        Temp
+        {
+        field T;
+        expression "303";
+        condition "mag(pos()-vector(0,0,0))< 0.001 ";
+        keepPatches true;     
+        }
+	C
+        {
+        field C;
+        expression "1";
+        condition "mag(pos()-vector(0,0,0))< 0.001";
+        keepPatches true;     
+        }
+
+
+);

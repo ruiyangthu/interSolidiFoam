@@ -1,0 +1,3 @@
+myincompressibleTwoPhaseMixture/myincompressibleTwoPhaseMixture.C
+
+LIB = $(FOAM_USER_LIBBIN)/libmyincompressibleTransportModels
