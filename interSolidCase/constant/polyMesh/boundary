@@ -21,28 +21,28 @@ FoamFile
     {
         type            symmetryPlane;
         inGroups        1(symmetryPlane);
-        nFaces          128;
-        startFace       2416;
+        nFaces          620;
+        startFace       23914;
     }
     centerline2
     {
         type            symmetryPlane;
         inGroups        1(symmetryPlane);
-        nFaces          128;
-        startFace       2544;
+        nFaces          620;
+        startFace       24534;
     }
     base
     {
         type            wall;
         inGroups        1(wall);
-        nFaces          112;
-        startFace       2672;
+        nFaces          448;
+        startFace       25154;
     }
     edges
     {
         type            patch;
-        nFaces          176;
-        startFace       2784;
+        nFaces          704;
+        startFace       25602;
     }
 )
 

@@ -123,20 +123,19 @@
         surfaceScalarField phir(phic*mixture.nHatf());
 
         tmp<surfaceScalarField> talphaPhiUn
+        (
+            fvc::flux
             (
-             fvc::flux
-             (
               phi,
               alpha1,
               alphaScheme
-              )
-             + fvc::flux
-             (
-              -fvc::flux(-phir, alpha2, alpharScheme),
-              alpha1,
-              alpharScheme
-              )
-             );
+            )
+          + fvc::flux
+            (
+               -fvc::flux(-phir, alpha2, alpharScheme),
+                alpha1,
+                alpharScheme            )
+       );
 
         // Calculate the Crank-Nicolson off-centred alpha flux
         if (ocCoeff > 0)

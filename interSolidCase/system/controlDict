@@ -28,7 +28,7 @@ stopAt          endTime;
 
 endTime         1;
 
-deltaT          5e-4;
+deltaT          1e-4;
 
 writeControl    adjustableRunTime;
 
@@ -54,8 +54,6 @@ maxCo           10;
 maxAlphaCo      10;
 maxDeltaT       0.0001;
 
-//libs ("libtwoPhaseInterfaceProperties.so" );
-//libs ("libtwoPhaseProperties.so" );
 
 
 // ************************************************************************* //

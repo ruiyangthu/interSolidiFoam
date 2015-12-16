@@ -40,16 +40,24 @@ volVectorField U
  mesh
  );
 
+
+
+
+
 #include "createPhi.H"
 
 
 Info<< "Reading transportProperties\n" << endl;
 #include "readTransportProperties.H"
-
+//myimmiscibleIncompressibleTwoPhaseMixture mixture(U, phi);
 
 Info<< "Calculating phase-fraction\n" << endl;
 //Calculating phase-fraction f of melt 
+//volScalarField& alpha1(mixture.alpha1());
+//volScalarField& alpha2(mixture.alpha2());
 
+//const dimensionedScalar& rho1 = mixture.rho1();
+//const dimensionedScalar& rho2 = mixture.rho2();
 volScalarField fl ("fl", max(min((T-Ts)/(Tl-Ts),scalar(1)),scalar(0)));
 volScalarField fs ("fs", scalar(1) - fl);
 
@@ -277,6 +285,7 @@ volScalarField rho1Alpha1
  );
 rho1Alpha1.oldTime();
 
+
 //Calculating enthalpy and corrected temperature
 Info<< "Calculating enthalpy and corrected temperature\n" << endl;
 
@@ -293,5 +302,4 @@ volScalarField h
  cp*(T-Tmelt) + alpha1*fl*L
  );
 h.write();
-
 

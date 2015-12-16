@@ -28,10 +28,9 @@ gradSchemes
 divSchemes
 {
     div(rhoPhi,U)  Gauss upwind;
-    div(rhoCpPhi,T)    Gauss linearUpwind grad(T);
     div(phiCp,T)     Gauss linearUpwind grad(T);
-    div(phi,alpha)  Gauss vanLeer;
-    div(phi,alpha.water) Gauss vanLeer;
+    div(phi,alpha.water)  Gauss vanLeer;
+    div(phi,alpha) Gauss vanLeer;
     div(phirb,alpha) Gauss interfaceCompression;
     div(((rho*nuEff)*dev2(T(grad(U))))) Gauss linear;
     div(phi,T) Gauss upwind;
@@ -62,5 +61,12 @@ fluxRequired
     alpha.water;
 }
 
+MELTING
+{
+    minTempCorrector 3;
+    maxTempCorrector 150;
+    alphaTolerance 1e-6;
+    alphaRelaxatio 0.6;
+}
 
 // ************************************************************************* //

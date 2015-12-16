@@ -788,6 +788,7 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/alphaControls.H \
 ../alphaEqnSubCycle.H \
 ../alphaEqn.H \
 ../UEqn.H \
+../TEqn.H \
 pEqn.H \
 
 

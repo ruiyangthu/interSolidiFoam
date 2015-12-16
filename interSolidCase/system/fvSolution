@@ -28,7 +28,7 @@ solvers
 
         solver          smoothSolver;
         smoother        symGaussSeidel;
-        tolerance       1e-8;
+        tolerance       1e-6;
         relTol          0;
     };
 
@@ -36,25 +36,10 @@ solvers
     {
 	solver BICCG;
 	preconditioner DILU;
-	tolerance 1e-7;
+	tolerance 1e-6;
 	relTol 0;
     }; 
  
-    C
-    {
-        solver BICCG;
-        preconditioner DILU;
-        tolerance 1e-7;
-        relTol 0;
-     };
-     CFinal
-     {
-        solver smoothSolver;
-        smoother        GaussSeidel; 
-        tolerance       0.1;
-        relTol          0;
-
-      }
 
     pcorr
     {
